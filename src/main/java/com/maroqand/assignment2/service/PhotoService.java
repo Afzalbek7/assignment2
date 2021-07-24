@@ -23,9 +23,10 @@ public class PhotoService {
     ArrayList<Photo> imageParams;
     Album album;
     List<String> imgUrl;
+
     public List<String> getPhotos(String photoName, Model model) {
         try {
-            URL url = new URL("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4b53c35d166569f04bc7aa69c53dc8cf&tags=eco&format=json&nojsoncallback=1&tags=" + photoName + "&per_page=8&page=");
+            URL url = new URL("https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4b53c35d166569f04bc7aa69c53dc8cf&tags=eco&format=json&nojsoncallback=1&tags=" + photoName + "&per_page=25&page=");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             int status = connection.getResponseCode();
